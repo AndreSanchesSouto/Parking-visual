@@ -1,48 +1,75 @@
 import Header from "../components/Header"
+import { api } from "../../services/api"
+import { FormEvent, useRef } from "react" 
+
 
 function CarRegister() {
+
+    const plateRef = useRef<HTMLInputElement>(null)
+    const nameRef = useRef<HTMLInputElement>(null)
+    const yearRef = useRef<HTMLInputElement>(null)
+    const isMercosulRef = useRef<HTMLInputElement>(null)
+
+    async function handleSubmit(event: FormEvent) {
+        event.preventDefault()
+
+        await api.post("/car-register", {
+            plate: plateRef.current?.value,
+            name: nameRef.current?.value,
+            year: yearRef.current?.value,
+            mercosul: isMercosulRef.current?.checked
+        })
+
+    }
 
     return (
       <>
         <Header/>
-        <form className="flex flex-col gap-8 bg-red-700 max-w-lg m-auto p-10 my-10 rounded-3xl">
-            <div className="m-auto">
-                <label className="text-2xl font-bold font-serif text-dark-purple space-y-1 w-full">
+        <form
+        className="flex flex-col gap-8 bg-blue-700 max-w-lg m-auto p-10 my-10 rounded-3xl"
+        onSubmit={ handleSubmit }
+        >
+            <div className="">
+                <label className="text-xl font-bold text-white font-serif text-dark-purple space-y-1 w-full">
                 <span className="px-6">Placa:</span>
                 <input
-                    className="text-xl font-serif border-dark-purple border-2 rounded-xl py-3 block px-6 bg-grey focus:outline-none w-full"
+                    className="text-xl text-black font-serif border-dark-purple border-2 rounded-xl py-2 block px-6 bg-grey focus:outline-none w-full"
                     placeholder="ABC-123"
                     type="text"
                     required
+                    ref={plateRef}
                 />
                 </label>
             </div>
-            <div className="m-auto">
-                <label className="text-2xl font-bold font-serif text-dark-purple space-y-1 w-full">
+            <div className="">
+                <label className="text-xl font-bold text-white font-serif text-dark-purple space-y-1 w-full">
                 <span className="px-6">Nome:</span>
                 <input
-                    className="text-xl font-serif border-dark-purple border-2 rounded-xl py-3 block px-6 bg-grey focus:outline-none w-full"
+                    className="text-xl font-serif text-black border-dark-purple border-2 rounded-xl py-2 block px-6 bg-grey focus:outline-none w-full"
                     placeholder="Nome do carro..."
                     type="text"
                     required
+                    ref={nameRef}
                 />
                 </label>
             </div>
-            <div className="m-auto">
-                <label className="text-2xl font-bold font-serif text-dark-purple space-y-1 w-full">
+            <div className="">
+                <label className="text-xl font-bold text-white font-serif text-dark-purple space-y-1 w-full">
                 <span className="px-6">Ano:</span>
                 <input
-                    className="text-xl font-serif border-dark-purple border-2 rounded-xl py-3 block px-6 bg-grey focus:outline-none w-full"
-                    placeholder="Ano de fabricação..."
+                    className="text-xl font-serif text-black border-dark-purple border-2 rounded-xl py-2 block px-6 bg-grey focus:outline-none w-full"
+                    placeholder="Ano do carro..."
                     type="text"
                     required
+                    ref={yearRef}
                 />
                 </label>
             </div>
-            <div className="m-auto">
-                <label className="text-2xl font-bold font-serif text-dark-purple space-y-1 w-full">
+            <div className="px-6 text-white">
+                <label className="text-xl font-bold font-serif text-dark-purple space-y-1 w-full">
                 <input 
                 type="checkbox"
+                ref={isMercosulRef}
                 />
                 <span className="px-6">Placa MERCOSUL</span>
                 </label>
