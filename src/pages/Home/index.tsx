@@ -1,9 +1,12 @@
+import Header from "../components/Header"
+
 function Home() {
 
   return (
     <>
+    <Header/>
     <h1 className="bg-blue-500">
-      Escolha o que deseja:
+      Home
     </h1>
     </>
   )
