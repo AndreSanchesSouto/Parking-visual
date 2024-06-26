@@ -28,34 +28,53 @@ function Drivers() {
         return n++
     }
 
+    async function handleDelete(plate: string) {
+        await api.delete("/car-delete", {
+            params: {
+                plate: plate
+            }
+        })
+
+        loadCars()
+    }
+
     return(
         <>
             <Header />
-            <div className="bg-blue-300 flex max-w-5xl mx-auto my-10">
+            <div className="flex max-w-5xl mx-auto my-10">
                 <table className="text-center w-full">
-                    <thead className="border">
+                    <thead>
                         <tr>
-                            <th className="border px-5 py-2">Posição</th>
-                            <th className="border px-5 py-2">Placa</th>
-                            <th className="border px-5 py-2">Nome</th>
-                            <th className="border px-5 py-2">Ano</th>
-                            <th className="border px-5 py-2">MERCOSUL</th>
+                            <th className="border bg-blue-300 px-5 py-2">Posição</th>
+                            <th className="border bg-blue-300 px-5 py-2">Placa</th>
+                            <th className="border bg-blue-300 px-5 py-2">Nome</th>
+                            <th className="border bg-blue-300 px-5 py-2">Ano</th>
+                            <th className="border bg-blue-300 px-5 py-2">MERCOSUL</th>
                         </tr>
                     </thead>
 
                     {
                         cars.map((car) =>
-                        <tbody className="border" 
-                        key={car.id}
+                        <tbody 
+                        key={car.plate}
                         >
                             <tr>
-                                <td className="border px-5 py-2">{count()}</td>
-                                <td className="border px-5 py-2">{ car.plate }</td>
-                                <td className="border px-5 py-2">{ car.name }</td>
-                                <td className="border px-5 py-2">{ car.year }</td>
-                                <td className="border px-5 py-2">{ car.isMercosul? "SIM" : "NÃO" }</td>
+                                <td className="border bg-blue-300 px-5 py-2">{count()}</td>
+                                <td className="border bg-blue-300 px-5 py-2">{ car.plate }</td>
+                                <td className="border bg-blue-300 px-5 py-2">{ car.name }</td>
+                                <td className="border bg-blue-300 px-5 py-2">{ car.year }</td>
+                                <td className="border bg-blue-300 px-5 py-2">{ car.isMercosul? "SIM" : "NÃO" }</td>
+                                <td>
+                                    <button 
+                                    className="bg-red-500 text-white rounded-2xl p-1 flex justify-start"
+                                    onClickCapture={() => { handleDelete(car.plate) }}
+                                    >
+                                        Deletar
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
+                           
                     )}
 
                 </table>

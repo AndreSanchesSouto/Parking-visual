@@ -20,6 +20,13 @@ function CarRegister() {
             mercosul: isMercosulRef.current?.checked
         })
 
+
+        alert("Carro adicionado!")
+        plateRef.current!.value = ""
+        nameRef.current!.value = ""
+        yearRef.current!.value = ""
+        isMercosulRef.current!.checked = false
+
     }
 
     return (

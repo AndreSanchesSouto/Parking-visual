@@ -32,27 +32,35 @@ function Drivers() {
     return(
         <>
             <Header />
-            <div className="bg-blue-300 flex max-w-5xl mx-auto my-10">
+            <div className="flex max-w-5xl mx-auto my-10">
                 <table className="text-center w-full">
-                    <thead className="border">
+                    <thead className="">
                         <tr>
-                            <th className="border px-5 py-2">Posição</th>
-                            <th className="border px-5 py-2">Nome</th>
-                            <th className="border px-5 py-2">Ano nascimento</th>
-                            <th className="border px-5 py-2">Celular</th>
+                            <th className="bg-blue-300 border px-5 py-2">Posição</th>
+                            <th className="bg-blue-300 border px-5 py-2">Nome</th>
+                            <th className="bg-blue-300 border px-5 py-2">Ano nascimento</th>
+                            <th className="bg-blue-300 border px-5 py-2">Celular</th>
                         </tr>
                     </thead>
 
                     {
                         drivers.map((driver) => 
-                            <tbody className="border" 
+                            <tbody className="" 
                             key={driver.id}
                             >
                                 <tr>
-                                    <td className="border px-5 py-2">{count()}</td>
-                                    <td className="border px-5 py-2">{driver.name}</td>
-                                    <td className="border px-5 py-2">{driver.year_born}</td>
-                                    <td className="border px-5 py-2">{driver.cellphone}</td>
+                                    <td className="bg-blue-300 border-2 px-5 py-2">{count()}</td>
+                                    <td className="bg-blue-300 border-2 px-5 py-2">{driver.name}</td>
+                                    <td className="bg-blue-300 border-2 px-5 py-2">{driver.year_born}</td>
+                                    <td className="bg-blue-300 border-2 px-5 py-2">{driver.cellphone}</td>
+                                    <td>
+                                        <button 
+                                        className="bg-red-500 text-white rounded-2xl p-1 flex justify-start"
+                                        onClickCapture={() => {  }}
+                                        >
+                                            Deletar
+                                        </button>
+                                    </td>
                                 </tr>
                             </tbody>
                         )

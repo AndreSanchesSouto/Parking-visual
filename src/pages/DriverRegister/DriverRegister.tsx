@@ -19,6 +19,12 @@ function DriverRegister() {
             cellphone: cellphoneRef.current?.value
         })
 
+
+    alert("Motorista adicionado!")
+    nameRef.current!.value = ""
+    yearBornRef.current!.value = ""
+    passwordRef.current!.value = ""
+    cellphoneRef.current!.value = ""
     }
 
     return(
