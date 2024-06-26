@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return(
-        <header className="w-screen bg-blue-500 h-10 m-auto">
-            <div className="self-center flex space-x-56 row-auto text-2xl w-full align-middle">
+        <header className="w-screen bg-blue-500 flex align-middle h-12 font-semibold text-white">
+            <div className="self-center flex gap-10 text-2xl">
+                <img src="" alt="" />
                 <Link to="/">Home</Link>
                 <Link to="/cars">Cars</Link>
                 <Link to="/car-register">Car Register</Link>
