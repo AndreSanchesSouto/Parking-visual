@@ -29,6 +29,16 @@ function Drivers() {
         return n++
     }
 
+    async function handleDelete(id: string) {
+        await api.delete("driver-delete", {
+            params: {
+                id: id
+            }
+        })
+
+        loadDrivers()
+    }
+
     return(
         <>
             <Header />
@@ -56,7 +66,7 @@ function Drivers() {
                                     <td>
                                         <button 
                                         className="bg-red-500 text-white rounded-2xl p-1 flex justify-start"
-                                        onClickCapture={() => {  }}
+                                        onClickCapture={() => { handleDelete(driver.id) }}
                                         >
                                             Deletar
                                         </button>
