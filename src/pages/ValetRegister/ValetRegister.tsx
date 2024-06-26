@@ -5,8 +5,8 @@ function Register() {
     return(
     <>
         <Header/>
-        <div className="bg-indigo-90 w-screen h-screen">
-            <div className="m-auto mt-10 max-w-4xl bg-indigo-950 bg-opacity-80 shadow-2xl rounded-2xl text-white p-5 flex justify-around ">
+        <div className="bg-indigo-90 w-screen h-screen bg-[url('../components/img.jpg')] bg-cover ">
+            <div className="m-auto max-w-4xl bg-indigo-950 bg-opacity-95 shadow-2xl rounded-2xl text-white p-5 flex justify-around ">
                 <div className="flex flex-col justify-center max-w-sm">
                     <h1 
                     className="font-bold text-4xl"
@@ -47,7 +47,7 @@ function Register() {
                     </form>
                 </div>  
             </div>
-            <div className="m-auto max-w-4xl mt-5 bg-indigo-950 bg-opacity-80 shadow-2xl rounded-2xl text-white p-5 ">
+            <div className="m-auto max-w-4xl mt-5 bg-indigo-950 bg-opacity-95 shadow-2xl rounded-2xl text-white p-5 ">
                 <div className="w-full flex gap-5 flex-col">
                     <h2 className="text-2xl font-semibold text-center mb-3">Informações para contato</h2>
                     <form className="grid grid-cols-3 gap-x-1    gap-y-3 m-auto">
@@ -63,7 +63,7 @@ function Register() {
                     </form>
                 </div>
             </div>
-            <div className="m-auto max-w-4xl mt-5 bg-indigo-950 bg-opacity-80 shadow-2xl rounded-2xl text-white p-5 ">
+            <div className="m-auto max-w-4xl mt-5 bg-indigo-950 bg-opacity-95 shadow-2xl rounded-2xl text-white p-5 ">
                 <div className="grid grid-cols-2 gap-5">
                     <div className="m-auto">
                         <label className="flex flex-row justify-center mb-2 text-xl">Senha</label>

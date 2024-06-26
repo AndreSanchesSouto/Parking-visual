@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return(
-        <header className="w-screen bg-blue-500 flex align-middle h-12 font-semibold text-white justify-between p-10">
+        <header className="w-screen bg-indigo-600 bg-opacity-85 flex align-middle h-12 font-semibold text-white justify-between p-10">
             <div className="self-center flex gap-10 text-2xl ">
                 <img src="" alt="" />
                 <Link to="/">Home</Link>
