@@ -58,14 +58,14 @@ function Drivers() {
                             <tbody className="" 
                             key={driver.id}
                             >
-                                <tr>
-                                    <td className="bg-blue-300 border-2 px-5 py-2">{count()}</td>
-                                    <td className="bg-blue-300 border-2 px-5 py-2">{driver.name}</td>
-                                    <td className="bg-blue-300 border-2 px-5 py-2">{driver.year_born}</td>
-                                    <td className="bg-blue-300 border-2 px-5 py-2">{driver.cellphone}</td>
-                                    <td>
+                                <tr className="hover:bg-blue-400 hover:text-white hover:scale-105 hover:duration-200 hover:rounded-full bg-blue-300">
+                                    <td className="border px-5 py-2">{count()}</td>
+                                    <td className="border px-5 py-2">{driver.name}</td>
+                                    <td className="border px-5 py-2">{driver.year_born}</td>
+                                    <td className="border px-5 py-2">{driver.cellphone}</td>
+                                    <td className="bg-white">
                                         <button 
-                                        className="bg-red-500 text-white rounded-2xl p-1 flex justify-start"
+                                        className="bg-red-500 text-white rounded-2xl p-1 flex justify-start "
                                         onClickCapture={() => { handleDelete(driver.id) }}
                                         >
                                             Deletar
